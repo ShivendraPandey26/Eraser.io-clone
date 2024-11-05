@@ -1,4 +1,5 @@
-"use client"
+"use client";
+import { LoginLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs";
 import React, { useState, useRef, useEffect } from "react";
 
 const Header: React.FC = () => {
@@ -12,7 +13,10 @@ const Header: React.FC = () => {
 
   // Close the menu if clicking outside
   const handleClickOutside = (event: MouseEvent) => {
-    if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+    if (
+      mobileMenuRef.current &&
+      !mobileMenuRef.current.contains(event.target as Node)
+    ) {
       setIsMobileMenuOpen(false);
     }
   };
@@ -37,9 +41,19 @@ const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <nav aria-label="Global" className="hidden md:block">
             <ul className="flex items-center gap-6 text-sm">
-              {["About", "Careers", "History", "Services", "Projects", "Blog"].map((item) => (
+              {[
+                "About",
+                "Careers",
+                "History",
+                "Services",
+                "Projects",
+                "Blog",
+              ].map((item) => (
                 <li key={item}>
-                  <a className="text-gray-300 transition hover:text-gray-300/75" href="#">
+                  <a
+                    className="text-gray-300 transition hover:text-gray-300/75"
+                    href="#"
+                  >
                     {item}
                   </a>
                 </li>
@@ -49,19 +63,13 @@ const Header: React.FC = () => {
 
           <div className="flex items-center gap-4">
             <div className="sm:flex sm:gap-4">
-              <a
-                className="block rounded-md bg-red-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-red-700"
-                href="#"
-              >
-                Login
-              </a>
+              <span className="block rounded-md bg-red-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-red-700">
+                <LoginLink postLoginRedirectURL="/dashboard"> Login </LoginLink>
+              </span>
 
-              <a
-                className="hidden rounded-md bg-gray-700 px-5 py-2.5 text-sm font-medium text-gray-300 transition hover:text-white sm:block"
-                href="#"
-              >
-                Register
-              </a>
+              <span className="hidden rounded-md bg-gray-700 px-5 py-2.5 text-sm font-medium text-gray-300 transition hover:text-white sm:block">
+                <RegisterLink postLoginRedirectURL="/dashboard"> Register </RegisterLink>
+              </span>
             </div>
 
             {/* Mobile Menu Button */}
@@ -78,7 +86,11 @@ const Header: React.FC = () => {
                 stroke="currentColor"
                 strokeWidth={2}
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             </button>
           </div>
@@ -92,9 +104,19 @@ const Header: React.FC = () => {
           className="md:hidden bg-gray-800 p-4 absolute inset-x-0 top-16 z-50 transition transform duration-300 ease-in-out"
         >
           <ul className="flex flex-col items-center gap-4 text-sm">
-            {["About", "Careers", "History", "Services", "Projects", "Blog"].map((item) => (
+            {[
+              "About",
+              "Careers",
+              "History",
+              "Services",
+              "Projects",
+              "Blog",
+            ].map((item) => (
               <li key={item}>
-                <a className="text-gray-300 transition hover:text-gray-300/75" href="#">
+                <a
+                  className="text-gray-300 transition hover:text-gray-300/75"
+                  href="#"
+                >
                   {item}
                 </a>
               </li>
