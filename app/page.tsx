@@ -1,14 +1,11 @@
-import { Button } from "@/components/ui/button";
+import Header from "./_components/Header";
+import Hero from "./_components/Hero";
 
 export default function Home() {
   return (
-    <main>
-      <h1>
-        hello world ! & hello world !
-        <Button className="bg-red-600">
-          Click me!
-        </Button>
-      </h1>
+    <main className="max-w-screen max-h-screen overflow-hidden">
+      <Header />
+      <Hero />
     </main>
   );
 }
