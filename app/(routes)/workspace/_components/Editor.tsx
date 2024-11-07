@@ -56,25 +56,25 @@ function Editor({onSaveTrigger,fileId,fileData}:{onSaveTrigger:any,fileId:any,fi
 
             tools:{
                 header: {
-                    class: Header,
+                    class: Header as any,
                     shortcut: 'CMD+SHIFT+H',
                     config:{
                         placeholder:'Enter a Header'
                     }
                   },
                   list: {
-                    class: List,
+                    class: List as any,
                     inlineToolbar: true,
                     config: {
                       defaultStyle: 'unordered'
                     }
                   },
                   checklist: {
-                    class: Checklist,
+                    class: Checklist as any,
                     inlineToolbar: true,
                   },
-                  paragraph: Paragraph,
-                  warning: Warning,
+                  paragraph: Paragraph as any,
+                  warning: Warning as any,
             },
            
             holder: 'editorjs',
