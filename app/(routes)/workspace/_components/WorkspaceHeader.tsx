@@ -3,7 +3,13 @@ import { Link, Save } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 
-function WorkspaceHeader({onSave}:any) {
+function WorkspaceHeader({onSave, shareLink}:any) {
+
+  const handleShareLink = () => {
+    navigator.clipboard.writeText(shareLink);
+    alert('Share link copied to clipboard');
+  };
+  
   return (
     <div className='p-3 border-b flex justify-between items-center'>
       <div className='flex gap-2 items-center'>
@@ -19,8 +25,10 @@ function WorkspaceHeader({onSave}:any) {
         onClick={()=>onSave()}
         > 
         <Save className='h-4 w-4' /> Save </Button>
-        <Button className='h-8 text-[12px]
-        gap-2 bg-blue-600 hover:bg-blue-700'>
+
+        <Button
+        onClick={handleShareLink}
+        className='h-8 text-[12px] gap-2 bg-blue-600 hover:bg-blue-700'>
           Share <Link className='h-4 w-4' /> </Button>
       </div>
     </div>

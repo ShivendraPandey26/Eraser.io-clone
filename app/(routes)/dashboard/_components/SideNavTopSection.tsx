@@ -195,7 +195,7 @@ function SideNavTopSection({ user, setActiveTeamInfo }: any) {
       {/* Delete team */}
       <Button
         variant="outline"
-        className="w-full justify-start gap-2 font-bold mt-8 bg-gray-100 mb-[-20rem]"
+        className="w-full justify-start gap-2 font-bold mt-8 bg-gray-100 hover:bg-gray-300 mb-[-20rem]"
         onClick={deleteActiveTeam}
       >
         <Trash className="h-5 w-5" />
@@ -205,8 +205,7 @@ function SideNavTopSection({ user, setActiveTeamInfo }: any) {
       {/* All File Button */}
       <Button
         variant="outline"
-        className="w-full justify-start
-          gap-2 font-bold mt-8 bg-gray-100"
+        className="w-full justify-start gap-2 font-bold mt-8 bg-gray-100 hover:bg-gray-300"
         onClick={handleShowFiles}
       >
         <LayoutGrid className="h-5 w-5" />
