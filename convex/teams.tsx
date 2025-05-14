@@ -20,3 +20,10 @@ export const createTeam=mutation({
         return result;
     },
 })
+
+export const deleteTeam = mutation({
+  args: { teamId: v.string() },
+  handler: async (ctx, { teamId }) => {
+    await ctx.db.delete(teamId as any);
+  },
+});

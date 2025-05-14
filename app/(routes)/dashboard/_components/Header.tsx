@@ -19,9 +19,9 @@ function Header() {
             className='rounded-full'
             />
         </div>
-        <Button className='gap-2 flex text-sm
+        {/* <Button className='gap-2 flex text-sm
         h-8 hover:bg-blue-700 bg-blue-600
-        '> <Send className='h-4 w-4'/> Invite</Button>
+        '> <Send className='h-4 w-4'/> Invite</Button> */}
     </div>
   )
 }
